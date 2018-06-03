@@ -3,7 +3,7 @@
     <div class="title">热销推荐</div>
     <ul>
       <li class="item border-bottom" v-for="recItem of recommendList" :key="recItem.id">
-        <img class="item-img" :src="recItem.src" alt="">
+        <img class="item-img" :src="recItem.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">{{recItem.title}}</p>
           <p class="item-desc">{{recItem.desc}}</p>
@@ -17,24 +17,11 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    recommendList: Array
+  },
   data () {
     return {
-      recommendList: [{
-        id: '01',
-        src: 'http://img1.qunarzz.com/sight/p0/1604/78/78873494f26e554090.water.jpg_200x200_331422ad.jpg',
-        title: '京东石林峡',
-        desc: '谷内山峰挺立峭拔，天上美景落人间'
-      }, {
-        id: '02',
-        src: 'http://img1.qunarzz.com/sight/p0/1804/c8/c88bb5e69c9a9c5ea3.img.jpg_200x200_740720ff.jpg',
-        title: '古北水镇',
-        desc: '弄堂小道曲径通幽，古建大宅庭院深深'
-      }, {
-        id: '03',
-        src: 'http://img1.qunarzz.com/sight/p0/1603/ad/ad84d5339c3a34f390.water.jpg_200x200_788cb0d2.jpg',
-        title: '十渡风景区',
-        desc: '秋天的孤山寨蓝天白云映衬，还可欣赏红叶美景'
-      }]
     }
   }
 }
