@@ -12,51 +12,15 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="item-list">
-          <div class="item-wrapper">
-            <div class="item">北京</div>
-          </div>
-          <div class="item-wrapper">
-            <div class="item">北京</div>
-          </div>
-          <div class="item-wrapper">
-            <div class="item">北京</div>
-          </div>
-          <div class="item-wrapper">
-            <div class="item">北京</div>
-          </div>
-          <div class="item-wrapper">
-            <div class="item">北京</div>
-          </div>
-          <div class="item-wrapper">
-            <div class="item">北京</div>
+          <div class="item-wrapper" v-for="item of hotCities" :key="item.id">
+            <div class="item">{{item.name}}</div>
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="alphabet">
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="alphabet">
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="alphabet">
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
-          <div class="letter border-bottom">埃及</div>
+      <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
+        <div class="title border-topbottom">{{key}}</div>
+        <div class="alphabet" v-for="subItem of item" :key="subItem.id">
+          <div class="letter border-bottom">{{subItem.name}}</div>
         </div>
       </div>
     </div>
@@ -67,8 +31,26 @@
 import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
+  data () {
+    return {
+      // hotCities
+    }
+  },
+  props: {
+    hotCities: Array,
+    cities: Object,
+    letter: String
+  },
   mounted () {
-    this.srcoll = new Bscroll(this.$refs.scrollWrapper)
+    this.scroll = new Bscroll(this.$refs.scrollWrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
