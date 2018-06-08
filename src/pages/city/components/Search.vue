@@ -5,7 +5,7 @@
     </div>
     <div class="search-content" v-show="keyword" ref="searchContent">
       <ul>
-        <li class="search-item border-bottom" v-for="item of searchList" :key="item.id">{{item.name}}</li>
+        <li class="search-item border-bottom" v-for="item of searchList" :key="item.id" @click="handleClick(item.name)">{{item.name}}</li>
       </ul>
     </div>
   </div>
@@ -24,6 +24,12 @@ export default {
   },
   props: {
     cities: Object
+  },
+  methods: {
+    handleClick (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
+    }
   },
   updated () {
     this.scroll = new Bscroll(this.$refs.searchContent)
