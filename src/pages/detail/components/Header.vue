@@ -32,7 +32,7 @@ export default {
       if (scrollTop > 0) {
         if (scrollTop < 210) {
           let tmp = scrollTop / 210
-          this.opac.opacity = tmp
+          this.opac.opacity = tmp // 动态样式的绑定
         }
         this.show = false
       } else {
@@ -42,6 +42,9 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
