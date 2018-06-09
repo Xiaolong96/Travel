@@ -34,6 +34,9 @@ export default {
   updated () {
     this.scroll = new Bscroll(this.$refs.searchContent)
   },
+  activated () {
+    this.keyword = ''
+  },
   computed: {
   },
   watch: {
