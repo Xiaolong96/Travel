@@ -48,8 +48,9 @@ export default {
 @import '~styles/mixins.styl'
   .icons >>> .swiper-container
     width: 100%
-    height: 0
-    padding-bottom: 52%
+    height: 4.2rem
+    // height: 0
+    // padding-bottom: 52%
   .icons >>> .swiper-pagination-bullet
     width: 6px !important
     height: 6px !important
@@ -58,8 +59,9 @@ export default {
     float: left
     overflow: hidden
     width: 25%
-    height: 0
-    padding-bottom: 22%
+    height: 1.8rem
+    // height: 0
+    // padding-bottom: 22%
     .icon-img
       position: absolute
       top: .1rem
@@ -70,8 +72,12 @@ export default {
       padding: .1rem
       img
         display: block
-        height: 100%
-        margin: 0 auto
+        position:absolute;
+        left:50%;
+        top:50%;
+        width: 1rem
+        height: 1rem
+        margin: -.5rem 0 0 -.5rem
     .icon-desc
       position: absolute
       left: 0

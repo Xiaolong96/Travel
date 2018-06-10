@@ -35,6 +35,7 @@ export default {
     },
     gallaryClose () {
       this.gallaryShow = false
+      scrollTo(0, 0)
     }
   }
 }

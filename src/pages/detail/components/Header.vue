@@ -30,9 +30,9 @@ export default {
   },
   methods: {
     handleScroll () {
-      let scrollTop = document.documentElement.scrollTop
+      let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
       // console.log(scrollTop)
-      if (scrollTop > 0) {
+      if (scrollTop > 40) {
         if (scrollTop < 210) {
           let tmp = scrollTop / 210
           this.opac.opacity = tmp // 动态样式的绑定
