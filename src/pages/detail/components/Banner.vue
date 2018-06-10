@@ -3,12 +3,16 @@
     <img class="banner-img" :src="bannerImgUrl" alt="">
     <div class="banner-info">{{sightName}}</div>
     <div class="banner-num"><span class="iconfont banner-icon">&#xe633;</span>{{this.gallaryImgs.length}}</div>
-    <gallary :imgs="gallaryImgs" v-if="gallaryShow" @close="gallaryClose"></gallary>
+    <fade-animation>
+      <gallary :imgs="gallaryImgs" v-if="gallaryShow" @close="gallaryClose">
+      </gallary>
+    </fade-animation>
   </div>
 </template>
 
 <script>
-import gallary from '@/common/gallary/Gallary'
+import Gallary from '@/common/gallary/Gallary'
+import FadeAnimation from '@/common/fade/FadeAnimation'
 export default {
   name: 'DetailBanner',
   props: {
@@ -22,7 +26,8 @@ export default {
     }
   },
   components: {
-    gallary
+    Gallary,
+    FadeAnimation
   },
   methods: {
     handleBannerClick () {
