@@ -32,7 +32,7 @@ export default {
     }
   },
   updated () {
-    this.scroll = new Bscroll(this.$refs.searchContent)
+    this.scroll = new Bscroll(this.$refs.searchContent, {click: true})
   },
   activated () {
     this.keyword = ''

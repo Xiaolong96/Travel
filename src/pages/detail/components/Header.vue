@@ -4,7 +4,7 @@
         <div class="iconfont back_icon">&#xe624;</div>
       </router-link>
       <div class="header" :style="opac" v-show="!show">
-        京东石林峡
+        {{sightTitle}}
         <router-link to="/">
           <div class="header_left">
             <div class="iconfont header_back_icon">&#xe624;</div>
@@ -17,6 +17,9 @@
 <script>
 export default {
   name: 'DetailHeader',
+  props: {
+    sightTitle: String
+  },
   data () {
     return {
       show: true,
@@ -40,10 +43,10 @@ export default {
       }
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
@@ -69,6 +72,7 @@ export default {
     height: $headerHeight
     line-height: $headerHeight
     background: $bgColor
+    z-index: 2
     text-align: center
     font-size: .32rem
     color: #fff

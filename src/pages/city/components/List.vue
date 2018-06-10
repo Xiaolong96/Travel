@@ -52,7 +52,7 @@ export default {
     ...mapState(['city'])
   },
   mounted () {
-    this.scroll = new Bscroll(this.$refs.scrollWrapper)
+    this.scroll = new Bscroll(this.$refs.scrollWrapper, {click: true})
   },
   watch: {
     letter () {

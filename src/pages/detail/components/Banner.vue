@@ -1,9 +1,9 @@
 <template>
   <div class="banner" @click="handleBannerClick">
-    <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1604/78/78873494f26e554090.water.jpg_600x330_d5e0d52e.jpg" alt="">
-    <div class="banner-info">京东石林峡(AAAA景区)</div>
-    <div class="banner-num"><span class="iconfont banner-icon">&#xe633;</span>33</div>
-    <gallary :imgs="imgs" v-if="gallaryShow" @close="gallaryClose"></gallary>
+    <img class="banner-img" :src="bannerImgUrl" alt="">
+    <div class="banner-info">{{sightName}}</div>
+    <div class="banner-num"><span class="iconfont banner-icon">&#xe633;</span>{{this.gallaryImgs.length}}</div>
+    <gallary :imgs="gallaryImgs" v-if="gallaryShow" @close="gallaryClose"></gallary>
   </div>
 </template>
 
@@ -11,10 +11,14 @@
 import gallary from '@/common/gallary/Gallary'
 export default {
   name: 'DetailBanner',
+  props: {
+    sightName: String,
+    bannerImgUrl: String,
+    gallaryImgs: Array
+  },
   data () {
     return {
-      gallaryShow: false,
-      imgs: ['http://img1.qunarzz.com/sight/p0/1803/f6/f61e1477839c26f8a3.img.jpg_r_800x800_1d14c6c8.jpg', 'http://img1.qunarzz.com/sight/p0/1803/94/945a15e226359ea9a3.img.jpg_r_800x800_40c44190.jpg', 'http://img1.qunarzz.com/sight/p0/1803/86/8681b5be50d9021ba3.img.jpg_r_800x800_f0236013.jpg']
+      gallaryShow: false
     }
   },
   components: {
