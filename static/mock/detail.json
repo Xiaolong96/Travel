@@ -1,0 +1,26 @@
+{
+  "ret": true,
+  "data": {
+    "sightTitle": "京东石林峡",
+    "sightName": "京东石林峡(AAAA景区)",
+    "bannerImgUrl": "http://img1.qunarzz.com/sight/p0/1604/78/78873494f26e554090.water.jpg_600x330_d5e0d52e.jpg",
+    "gallaryImgs": ["http://img1.qunarzz.com/sight/p0/1803/f6/f61e1477839c26f8a3.img.jpg_r_800x800_1d14c6c8.jpg", "http://img1.qunarzz.com/sight/p0/1803/94/945a15e226359ea9a3.img.jpg_r_800x800_40c44190.jpg", "http://img1.qunarzz.com/sight/p0/1803/86/8681b5be50d9021ba3.img.jpg_r_800x800_f0236013.jpg"],
+    "categoryList": [{
+        "title": "成人票",
+        "children": [{
+          "title": "成人三馆联票",
+          "children": [{
+            "title": "成人三馆联票(某票行售)"
+          }]
+        },{
+          "title": "成人五馆联票"
+        }]
+      }, {
+        "title": "学生票"
+      }, {
+        "title": "儿童票"
+      }, {
+        "title": "特惠票"
+      }]
+  }
+}
